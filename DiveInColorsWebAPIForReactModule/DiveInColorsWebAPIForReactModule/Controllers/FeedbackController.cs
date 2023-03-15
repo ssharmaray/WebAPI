@@ -25,7 +25,7 @@ namespace DiveInColorsWebAPIForReactModule.Controllers
             return await _feedbackContext.Feedbacks.ToListAsync();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Feedback>> GetEmployee(int id)
+        public async Task<ActionResult<Feedback>> GetFeedback(int id)
         {
             if (_feedbackContext.Feedbacks == null)
             {
@@ -40,7 +40,7 @@ namespace DiveInColorsWebAPIForReactModule.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Feedback>> PostEmployee(Feedback feedback)
+        public async Task<ActionResult<Feedback>> PostFeedback(Feedback feedback)
         {
             _feedbackContext.Feedbacks.Add(feedback);
             await _feedbackContext.SaveChangesAsync();
@@ -68,7 +68,7 @@ namespace DiveInColorsWebAPIForReactModule.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Feedback>> DeleteEmployee(int id)
+        public async Task<ActionResult<Feedback>> DeleteFeedback(int id)
         {
             if (_feedbackContext.Feedbacks == null)
             {
